@@ -1,0 +1,21 @@
+<article class="product-card" (click)="goToDetails()">
+    <!-- 
+        name: "Bamboo Toothbrush Set",
+    description: "Pack of 4 biodegradable toothbrushes.",
+    price: 199,
+    imageUrl: "https://picsum.photos/seed/toothbrush/300/200",
+    category: "Personal Care",
+    rating: 4.2,
+    stock: 40, -->
+    <img [src]="product()?.imageUrl" alt="product()?.name">
+    <p  class="product-name">{{product()?.name}}</p>
+    <div>
+        <p>$ {{product()?.price}}</p>
+        <p>stock: {{product()?.stock}}</p>
+    </div>
+    <button class="cart-button" (click)="addProductToCart($event)">
+       <lucide-icon [img]="ShoppingCart" class="my-icon"></lucide-icon>
+        Add to cart
+    </button>
+
+</article>

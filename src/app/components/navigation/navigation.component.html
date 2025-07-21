@@ -1,0 +1,16 @@
+<nav>
+    <div class="name-logo">
+        <img src="/assets/logo.png" alt="E-commerce">
+        <p>E-commerce</p>
+    </div>
+    <div class="nav-links">
+        <a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/products" routerLinkActive="active" >Products</a>
+        <a routerLink="/cart" routerLinkActive="active" >Cart 
+            @if(cartItemCount() > 0){
+                <span>&#40;{{cartItemCount()}}&#41;</span>
+            }
+        </a>          
+    </div>
+    
+</nav>
