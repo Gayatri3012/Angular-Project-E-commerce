@@ -1,0 +1,53 @@
+.search-and-filter{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-and-filter input, .search-and-filter select{
+    font-family: inherit;
+    font-size: normal;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 6px;
+}
+
+.search-and-filter form{
+    display: flex;
+    gap: 0.5rem;
+}
+
+ button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2c4ed1;
+    border-radius: 8px;
+    box-shadow: #2c4ed1 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border: 0;
+}
+
+button:hover{
+    .button-icon{
+        transform: scale(1.05);
+    }
+}
+
+.button-icon{
+    transition: all 0.3s ease;
+}
+

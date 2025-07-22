@@ -1,0 +1,14 @@
+<section class="search-and-filter">
+    <select name="category" id="category" [(ngModel)]="category" (change)="filterProducts($event)">
+        <option value="All">All</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Home">Home</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Makeup">Makeup</option>
+    </select>
+    <form (ngSubmit)="SearchProduct($event)">
+        <input type="text" name="product-name" id="product-name" [(ngModel)]="searchTerm" placeholder="Search Products..." >
+        <button type="submit"><lucide-icon [img]="Search" class="button-icon" size="18"></lucide-icon> Search</button>
+    </form>
+</section>

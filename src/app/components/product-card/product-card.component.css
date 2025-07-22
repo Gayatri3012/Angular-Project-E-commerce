@@ -3,6 +3,7 @@
     padding: 1rem;
     max-width: 250px;
     width: 250px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +20,10 @@
 }
 
 .product-name{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 100%;
+white-space: nowrap;
     font-weight: bold;
     font-size: large;
     color:  #223b9c;

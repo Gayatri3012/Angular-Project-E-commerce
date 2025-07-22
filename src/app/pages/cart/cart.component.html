@@ -1,35 +1,48 @@
 <section class="cart">
 
-    <section class="cart-item-list">
-        @for(item of cart; track $index){
-            <article class="cart-item">
-                <img [src]="item.imageUrl" [alt]="item.name">
-                <div class="item-info">
-                    <p class="product-name">{{item.name}}</p>
-                    <div class="quantity-buttons">
-                        <button (click)="DecreaseQuantity(item)">
-                            <!-- <lucide-icon [img]="CircleMinus" class="my-icon" ></lucide-icon> -->
-                            <img src="../assets/minus.png" alt="">
-                        </button>
-                        <p>{{item.quantity}}</p>
-                        <button (click)="IncreaseQuantity(item)">
-                            <!-- <lucide-icon [img]="CirclePlus" class="my-icon" ></lucide-icon> -->
-                            <img src="../assets/plus.png" alt="" >
-                        </button>
-                    </div>
-                     <p>${{item.price! * item.quantity!}}</p>
-                </div>
-                <button class="delete-button" (click)="removeItem(item.productId!)"><lucide-icon [img]="Trash" class="delete-icon"></lucide-icon></button>
-            </article>
-           
-        } @empty{
-            <p>Cart Is Empty</p>
+    @if(!isCheckoutRoute){
+        @if(cart.length !== 0){
+        <section class="cart-item-list">
+            @for(item of cart; track $index){
+                <article class="cart-item">
+                        <img [src]="item.imageUrl" [alt]="item.name">
+                        <div class="item-info">
+                            <p class="product-name">{{item.name}}</p>
+                            <div class="quantity-buttons">
+                                <button (click)="DecreaseQuantity(item)">
+                                    <!-- <lucide-icon [img]="CircleMinus" class="my-icon" ></lucide-icon> -->
+                                    <img src="../assets/minus.png" alt="">
+                                </button>
+                                <p>{{item.quantity}}</p>
+                                <button (click)="IncreaseQuantity(item)">
+                                    <!-- <lucide-icon [img]="CirclePlus" class="my-icon" ></lucide-icon> -->
+                                    <img src="../assets/plus.png" alt="" >
+                                </button>
+                            </div>
+                            <!-- <p>${{item.price! * item.quantity!}}</p> -->
+                            <p>${{item.price}}</p>
+                        </div>
+                        <button class="delete-button" (click)="removeItem(item.productId!)"><lucide-icon [img]="Trash" class="delete-icon"></lucide-icon></button>
+                </article>
+                
+            } 
+        </section>}
+        @else {
+            <section>
+                <p>Cart Is Empty</p>
+                <a routerLink="/products">Continue Shopping</a>
+            </section>
+             
         }
-    </section>
 
-   @if(cart.length != 0){<section>
-        <h1>total : ${{total}}</h1>
-    </section>}
+        @if(cart.length != 0){<section class="cart-summary">
+                <h1>Total : ${{total}}</h1>
+                <a routerLink="/cart/checkout"><lucide-icon [img]="CircleDollarSign" class="icon"></lucide-icon>Checkout</a>
+            </section>
+        }
+    }
+
+    <router-outlet></router-outlet>
  
 </section>
-<router-outlet></router-outlet>
+

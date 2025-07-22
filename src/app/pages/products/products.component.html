@@ -1,5 +1,13 @@
-<section class="product-list">
-    @for(product of products ; track product.id){
-        <app-product-card [product]="product"></app-product-card>
-    }
+<section class="product-page">
+    <app-search-and-filter (onSearch)="onSearch($event)" (onFilter)="onFilter($event)"></app-search-and-filter>
+
+    <section class="product-list">
+        @for(product of products ; track product.id){
+            <app-product-card [product]="product"></app-product-card>
+        }@empty{
+            <p>No products found</p>
+        }
+    </section>
 </section>
+
+

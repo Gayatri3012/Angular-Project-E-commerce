@@ -1,9 +1,18 @@
+
+.product-page{
+       min-height: calc(100vh - 80px);
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
 .product-list{
     padding: 0 1rem;
-    /* margin: 2rem 0; */
+    margin: 0 0 2rem ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }

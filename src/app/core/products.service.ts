@@ -17,5 +17,17 @@ export class ProductsService {
     return this.products().find(item => item.id === id);
   }
 
+  searchProductByName(searchTerm:string){
+    return this.products().filter(product =>{
+      return product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+  }
+
+  filterByCategory(category:string){
+    return this.products().filter(product =>{
+      return product.category == category;
+    })
+  }
+
   constructor() { }
 }

@@ -1,11 +1,11 @@
 <section class="product-details-page">
-    <div class="path">
+    <div class="page-content">
+   <div class="path">
         <a routerLink="/products">Products</a>
         <lucide-icon [img]="ChevronRight" class="my-icon"></lucide-icon>
         <p>{{product?.name}}</p>
     </div>
- 
-   @if(product){ <section class="product-details">
+    @if(product){ <section class="product-details">
         <img [src]="product?.imageUrl" alt="">
         <div class="product-info">
             <p class="product-name">{{product?.name}}</p>
@@ -36,6 +36,10 @@
             </div>
         </div>
     </section>}
+    </div>
+ 
+ 
+   
     
 
 </section>
