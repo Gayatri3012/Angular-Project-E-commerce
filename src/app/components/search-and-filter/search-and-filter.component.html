@@ -9,6 +9,6 @@
     </select>
     <form (ngSubmit)="SearchProduct($event)">
         <input type="text" name="product-name" id="product-name" [(ngModel)]="searchTerm" placeholder="Search Products..." >
-        <button type="submit"><lucide-icon [img]="Search" class="button-icon" size="18"></lucide-icon> Search</button>
+        <button type="submit"><lucide-icon [img]="Search" class="button-icon" size="18"></lucide-icon><span>Search</span></button>
     </form>
 </section>

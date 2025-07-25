@@ -30,6 +30,7 @@
 }
 
 
+
 .checkout-form{
     padding: 1rem;
     display: flex;
@@ -47,11 +48,25 @@
 
 .shipping-info input, .shipping-info select{
     font-family: inherit;
-    font-size: normal;
+    width: 100%;
+    font-size: 16px;
     padding: 10px;
     outline: none;
     border: 1px solid rgb(173, 173, 173);
     border-radius: 6px;
+}
+
+input.invalid{
+    border: 1px solid rgb(209, 3, 3) !important;
+    background-color: rgba(254, 157, 157, 0.181);
+}
+
+.error{
+    color: gray;
+}
+
+.error span{
+    color: red;
 }
 
 .order-summary{
@@ -94,9 +109,9 @@ hr{
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background: #2c4ed1;
+    background: #2a4494;
     border-radius: 8px;
-    box-shadow: #2c4ed1 0 10px 20px -10px;
+    box-shadow: #2a4494 0 10px 20px -10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;

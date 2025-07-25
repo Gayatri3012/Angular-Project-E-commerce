@@ -5,19 +5,79 @@
         <p>Checkout</p>
     </div>
 
-    <form class="checkout-form" (ngSubmit)="onSubmit($event)">
+    <form class="checkout-form" [formGroup]="checkoutForm" (submit)="onSubmit($event)">
      
         <div class="shipping-info">
-            <h2 class="title">Shipping Info</h2>
-            <input type="text" name="name" placeholder="Full Name"  required class="input"  [(ngModel)]="userName"/>
-            <input type="text" name="address" placeholder="Address" required class="input"  [(ngModel)]="address"/>
-            <input type="text" name="phone" placeholder="Phone Number" required class="input"  [(ngModel)]="phoneNumber"/>
-            <label for="payment-method">Payment method:</label>
-            <select name="payment-method" id="payment-method"  [(ngModel)]="payOption">
-                <option value="cash-on-deleivery">Cash-on-delivery</option>
-                <option value="google-pay">Google pay</option>
-                <option value="cash-on-deleivery">Cash-on-delivery</option>
-            </select>
+              <h2 class="title">Shipping Info</h2>
+            <div class="input-div">
+                <input type="text" name="name" placeholder="Full Name"  required  
+                   [ngClass]="{'input': true,'invalid': checkoutForm.get('userName')?.invalid && (checkoutForm.get('userName')?.dirty || checkoutForm.get('userName')?.touched)}"
+                    formControlName="userName"
+                />   
+                @if (checkoutForm.get('userName')?.invalid && (checkoutForm.get('userName')?.dirty || checkoutForm.get('userName')?.touched)) {
+                    <div class="error">
+                    @if (checkoutForm.get('userName')?.hasError('required')) {
+                        <small>
+                        Name is required.<span>*</span>
+                        </small>
+                    }
+                    @if (checkoutForm.get('userName')?.hasError('minlength')) {
+                        <small>
+                        Name must be at least 4 characters long.<span>*</span>
+                        </small>
+                    }
+                    </div>
+                }
+            </div>
+          
+            <div class="input-div">
+                <input type="text" name="address" placeholder="Address" required 
+                   [ngClass]="{'input': true,'invalid': checkoutForm.get('address')?.invalid && (checkoutForm.get('address')?.dirty || checkoutForm.get('address')?.touched)}"
+                  formControlName="address"/>
+                @if(checkoutForm.get('address')?.invalid && (checkoutForm.get('address')?.dirty || checkoutForm.get('address')?.touched)){
+                    <div class="error">
+                    @if (checkoutForm.get('address')?.hasError('required')) {
+                        <small>
+                            Address is required<span>*</span>
+                        </small>
+                    }
+                    </div>
+                }
+            </div>
+        
+           
+            <div class="input-div">
+                <input type="text" name="phone" placeholder="Phone Number" required  
+                   [ngClass]="{'input': true,'invalid': checkoutForm.get('phoneNumber')?.invalid && (checkoutForm.get('phoneNumber')?.dirty || checkoutForm.get('phoneNumber')?.touched)}"
+                    formControlName="phoneNumber"
+                />
+                @if(checkoutForm.get('phoneNumber')?.invalid && (checkoutForm.get('phoneNumber')?.dirty || checkoutForm.get('phoneNumber')?.touched)){
+                    <div class="error">
+                    @if (checkoutForm.get('phoneNumber')?.hasError('required')) {
+                        <small>
+                    Phone number is required<span>*</span>
+                        </small>
+                    }
+                    @if (checkoutForm.get('phoneNumber')?.hasError('pattern')) {
+                        <small>
+                        Enter a valid 10-digit number<span>*</span>
+                        </small>
+                    }
+                    </div>
+                }
+            </div>
+
+            <div class="input-div">
+                <label for="payment-method">Payment method:</label>
+                <select name="payment-method" id="payment-method"  formControlName="payOption">
+                    <option value="cash-on-delivery">Cash-on-delivery</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit/Debit card">Credit/Debit card</option>
+                </select>
+            </div>
+       
+            
+       
         </div>
 
         <div class="order-summary">
@@ -46,7 +106,7 @@
             </div>
             <!-- Place Order -->
             <button type="submit" >
-                <lucide-icon [img]="Truck" class="button-icon"></lucide-icon>Place Order
+                <lucide-icon [img]="Truck" class="button-icon" ></lucide-icon>Place Order
             </button>
         </div>
     </form>

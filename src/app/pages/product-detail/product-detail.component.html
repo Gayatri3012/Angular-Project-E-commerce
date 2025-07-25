@@ -3,27 +3,27 @@
    <div class="path">
         <a routerLink="/products">Products</a>
         <lucide-icon [img]="ChevronRight" class="my-icon"></lucide-icon>
-        <p>{{product?.name}}</p>
+        <p>{{product!.name}}</p>
     </div>
     @if(product){ <section class="product-details">
-        <img [src]="product?.imageUrl" alt="">
+        <img [src]="product!.imageUrl" alt="">
         <div class="product-info">
-            <p class="product-name">{{product?.name}}</p>
-            <p class="product-desc">{{product?.description}}</p>
-            <p >{{product?.category}}</p>
-            <p class="product-price">$ {{product?.price}}</p>
+            <p class="product-name">{{product!.name}}</p>
+            <p class="product-desc">{{product!.description}}</p>
+            <p >{{product!.category}}</p>
+            <p class="product-price">$ {{product!.price}}</p>
             <div class="stars">
                 @for(s of [1,2,3,4,5]; track $index){
-                    @if(s <= product.rating){
+                    @if(s <= product!.rating){
                         <img src="../assets/filled-star.png"/>
                     } @else {
                         <img src="../assets/star.png"/>
                     }
                     
                 }
-                <p>{{product?.rating}}</p>
+                <p>{{product!.rating}}</p>
             </div>
-            <p>stock : {{product?.stock}}</p>
+            <p>stock : {{product!.stock}}</p>
             <div class="buttons-container">
                 <button> 
                     <lucide-icon [img]="Heart" class="button-icons"></lucide-icon> 

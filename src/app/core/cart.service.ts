@@ -13,7 +13,7 @@ export interface CartItemInterface {
   providedIn: 'root'
 })
 export class CartService {
-  cart = signal<CartItemInterface[]>([
+  protected cart = signal<CartItemInterface[]>([
       {
         imageUrl: "https://placehold.co/300x300?text=Nord+3",
         name:"OnePlus Nord 3",
@@ -40,7 +40,10 @@ export class CartService {
   totalQuantity = computed(() =>
     this.cart().reduce((acc, item) => acc + item.quantity, 0)
   );
-  
+
+  getCart(){
+    return this.cart();
+  }
  
   addToCart(item: CartItemInterface) {
     const currentCart = this.cart();

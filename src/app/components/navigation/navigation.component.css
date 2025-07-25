@@ -42,3 +42,45 @@ a{
 .active{
     font-weight: bold;
 }
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    nav{
+        padding: 0.5rem;
+    }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    nav{
+         justify-content: space-between;   
+    }
+
+    .name-logo{
+        justify-content: space-between;
+    }
+    .name-logo p{
+        font-size: x-large;
+    }
+    .name-logo img{
+        max-height: 40px;
+    }
+    .nav-links{
+            gap: 1rem; 
+    }
+    a{
+        font-size: small;
+    }
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .name-logo p{
+        font-size: large;
+    }
+       .name-logo img{
+        max-height: 35px;
+    }
+}

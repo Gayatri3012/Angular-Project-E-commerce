@@ -3,6 +3,7 @@ import { ProductInterface } from '../../../assets/data';
 import { LucideAngularModule, ShoppingCart } from 'lucide-angular';
 import { Router } from '@angular/router';
 import { CartService } from '../../core/cart.service';
+import { ToastService } from '../../core/toast.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ProductCardComponent {
   readonly ShoppingCart = ShoppingCart;
   product = input<ProductInterface>();
 
-  constructor(private cartSrevice: CartService){}
+  constructor(private cartSrevice: CartService, private toastService: ToastService){}
     
   private router = inject(Router);
   
@@ -35,5 +36,6 @@ export class ProductCardComponent {
     }
 
     this.cartSrevice.addToCart(item);
+    this.toastService.show('Product Added to cart!')
   }
 }

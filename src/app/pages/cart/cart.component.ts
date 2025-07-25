@@ -17,7 +17,7 @@ export class CartComponent {
   readonly CircleDollarSign = CircleDollarSign;
   private router = inject(Router);
   
-  cart : CartItemInterface[] =  this.cartSrevice.cart();
+  cart : CartItemInterface[] =  this.cartSrevice.getCart();
   total : number = this.cartSrevice.calculateTotal();
   
   constructor(private cartSrevice: CartService){}
@@ -28,19 +28,19 @@ export class CartComponent {
 
   IncreaseQuantity(item: CartItemInterface){
     this.cartSrevice.editQuantityOfItem(item, 1);
-    this.cart = this.cartSrevice.cart();
+    this.cart = this.cartSrevice.getCart();
     this.total = this.cartSrevice.calculateTotal();
   }
 
   DecreaseQuantity(item: CartItemInterface){
     this.cartSrevice.editQuantityOfItem(item, -1);
-    this.cart = this.cartSrevice.cart();
+    this.cart = this.cartSrevice.getCart();
     this.total = this.cartSrevice.calculateTotal();
   }
 
   removeItem(productId: number){
     this.cartSrevice.removeFromCart(productId);
-    this.cart = this.cartSrevice.cart();
+    this.cart = this.cartSrevice.getCart();
     this.total = this.cartSrevice.calculateTotal();
   }
 

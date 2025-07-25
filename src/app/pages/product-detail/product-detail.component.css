@@ -61,7 +61,7 @@
 }
 
 .product-name{
-    padding: 2rem 0;
+    padding:0 0 2rem;
     font-size: 40px;
     font-weight: 500;
     color: black;
@@ -99,9 +99,9 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background: #2c4ed1;
+    background: #2a4494;
     border-radius: 8px;
-    box-shadow: #2c4ed1 0 10px 20px -10px;
+    box-shadow: #2a4494 0 10px 20px -10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;

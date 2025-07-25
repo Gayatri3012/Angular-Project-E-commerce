@@ -8,11 +8,13 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 export const routes: Routes = [
     {
         path: '',
-        component : HomeComponent 
+        component : HomeComponent ,
+        title: 'Home'
     },
     {
         path: 'products',
-        component: ProductsComponent
+        component: ProductsComponent,
+        title: 'Products'
     },
     {
         path: 'products/:id',
@@ -21,10 +23,12 @@ export const routes: Routes = [
     {
         path: 'cart',
         component: CartComponent,
+        title: 'Cart',
         children: [
             { 
                 path: 'checkout', 
-                component: CheckoutComponent 
+                component: CheckoutComponent,
+                title: 'Checkout' 
             },
         ],
     },
