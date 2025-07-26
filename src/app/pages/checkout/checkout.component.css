@@ -140,4 +140,44 @@ button:hover{
 
 
 
+/* Tablets */
+@media (max-width: 1024px) {
+    .checkout {
+        gap: 1rem;
+        width: 100%;
+    }
+     .path{
+     font-size: 14px;
+    }
 
+    .checkout-form{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .shipping-info{
+        width: 100%;
+    }
+
+    .order-summary{
+    padding: 1rem;
+    min-width: 100%;
+    max-width: 100%;
+   display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    .checkout-form{
+        max-width: 100%;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  
+}

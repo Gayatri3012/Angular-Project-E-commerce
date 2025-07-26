@@ -155,3 +155,57 @@
     height: 24px;
     transition: all 0.3s ease-in-out;
 }
+
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .cart{
+        min-height: calc(100vh - 64px);
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+
+}
+
+/* Phones */
+@media (max-width: 768px) {  
+    
+    .product-name{
+        font-weight: 500;
+        font-size: medium;
+    }
+
+    .cart-item{
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .cart-item img{
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+    }
+    .quantity-buttons img{
+        height: 14px;
+        width: 14px;
+    }
+
+    .cart-summary a{
+        font-size: 14px;
+        padding: 10px;
+        border: 0;
+
+    }
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+   
+}

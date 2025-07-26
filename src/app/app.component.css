@@ -41,6 +41,23 @@ main {
     }
 }
 
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .main{
+        padding-top: 64px;
+    }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    .main{
+        padding-top: 56px;
+    }
+
+}
+
+
  app-navigation {
   display: block; 
   width: 100%;   

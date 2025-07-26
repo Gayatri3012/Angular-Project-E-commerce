@@ -36,7 +36,7 @@ white-space: nowrap;
     border-radius: 8px;
 }
 
-div{
+.price-stock{
     display: flex; 
     justify-content: center;
     gap: 1rem;
@@ -76,4 +76,92 @@ div{
     .my-icon{
         transform: rotate(5deg)
     }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+   
+}
+
+/* Phones */
+@media (max-width: 768px) {
+ .product-card{
+        /* flex: 1 1 220px; */
+        padding: 0.5rem;
+        max-width: 200px;
+        width: 200px;
+        height: 100%;
+    }
+    .product-name{
+        font-weight: bold;
+        font-size: medium;
+        color:  #223b9c;
+    }
+
+    .product-card img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .price-stock p{
+        font-size: 14px;
+    }
+
+    
+    .cart-button {
+        box-shadow: #2a4494 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 8px ;
+        width: 100%;
+        border: 0;
+    }
+
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+   .product-card{
+        /* flex: 1 1 220px; */
+        padding: 0.5rem;
+        max-width: 150px;
+        width: 150px;
+        height: 100%;
+    }
+    .product-name{
+        font-weight: bold;
+        font-size: medium;
+        color:  #223b9c;
+    }
+
+    .product-card img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .price-stock p{
+        font-size: 12px;
+    }
+
+    
+    .cart-button {
+        box-shadow: #2a4494 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 8px ;
+        width: 100%;
+        border: 0;
+    }
+
 }

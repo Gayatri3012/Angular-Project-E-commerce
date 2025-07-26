@@ -95,7 +95,7 @@
 }
 
 .buttons-container button{
-       display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
@@ -123,3 +123,120 @@
 }
 
 
+/* Tablets */
+@media (max-width: 1024px) {
+    .product-details-page{
+        flex-direction: column;
+        width: 100%;
+        min-height: calc(100vh - 64px);
+        max-height: fit-content;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 4rem;
+    }
+    .page-content{
+        margin-top: 0;
+        padding: 1rem;
+        width: 80%;
+    }
+    .path{
+     font-size: 14px;
+    }
+
+
+
+    .product-details{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        /* width: 100%; */
+        height: 100%;
+        gap: 1rem;
+    }
+    .product-details img{
+        width: 300px;
+        border-radius: 8px;
+    }
+
+
+    .product-info{
+        /* height: 450px; */
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    
+    .product-name{
+        padding:0;
+        font-size: 20px;
+        font-weight: 500;  
+        color: black; 
+    }
+
+    .product-desc {
+        font-size: 14px;
+        color: rgb(87, 86, 86);
+    }
+
+    .product-price{
+        padding:0;
+        font-size: medium;
+    }
+
+
+    .stars img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .buttons-container{
+        margin-top: 0;
+    }
+
+}
+
+/* Phones */
+@media (max-width: 768px) {
+        .product-details-page{
+        flex-direction: column;
+        width: 100%;
+        min-height: cal(100vh - 56px);
+        max-height: fit-content;
+        gap: 2rem;
+    }
+     .page-content{
+        margin-top: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .product-details{
+        width: 100%;
+    }
+ .product-details img{
+        width: 250px;
+        border-radius: 8px;
+    }
+
+    .buttons-container button{
+        gap: 0.5rem;
+        font-size: 12px;
+        padding: 10px;
+    }
+   .stars img{
+        width: 20px;
+        height: 20px;
+    }
+
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+   
+}

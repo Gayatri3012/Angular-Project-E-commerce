@@ -50,3 +50,38 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+   .home-page{
+        min-height: calc(100vh - 64px);
+        gap: 1rem;
+    }
+    .home-page a{
+        font-size: 14px;
+        padding: 10px;
+
+    }
+
+}
+
+/* Phones */
+@media (max-width: 768px) {
+   .home-page{
+        min-height: calc(100vh - 56px);
+        padding: 0 1rem;
+    }
+    .home-page p{
+        max-width: 80%;
+        font-size: 14px;
+    }
+    .home-page li{
+        font-size: 14px;
+    }
+
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+   
+}
